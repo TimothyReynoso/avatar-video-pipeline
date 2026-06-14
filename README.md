@@ -4,6 +4,8 @@ Autonomous AI video production system that generates character-consistent, lip-s
 
 This is not a proof of concept. It produces real videos for real social media channels.
 
+> **See it in action** — Full case study with sample output at the [Results](#results) section below. Real product, real AI character, real video output.
+
 ## Pipeline Architecture
 
 Script Engine -> Character Lock -> Scene Refs -> TTS Voice -> Avatar Animation -> Assembly -> SFX + Music -> Final Render
@@ -165,14 +167,14 @@ End-to-end pipeline producing a user-generated content (UGC) style product demon
 <table>
   <tr>
     <td align="center">
-      <img src="assets/suave-product-reference.jpg" width="250" alt="Product reference input"><br>
-      <sub><b>1. Product Reference</b></sub><br>
-      <sub>Source product photo (white background)</sub>
+      <img src="assets/suave-product-reference.jpg" width="250" alt="Lifestyle pose reference"><br>
+      <sub><b>1. Lifestyle Reference</b></sub><br>
+      <sub>Pose and scene composition target</sub>
     </td>
     <td align="center">
-      <img src="assets/suave-lifestyle-input.jpg" width="250" alt="Lifestyle pose reference"><br>
-      <sub><b>2. Lifestyle Reference</b></sub><br>
-      <sub>Pose and scene composition target</sub>
+      <img src="assets/suave-lifestyle-input.jpg" width="250" alt="Product reference input"><br>
+      <sub><b>2. Product Reference</b></sub><br>
+      <sub>Source product photo (white background)</sub>
     </td>
     <td align="center">
       <img src="assets/yumi-suave-ugc.png" width="250" alt="AI character UGC output"><br>
