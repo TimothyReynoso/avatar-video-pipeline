@@ -158,6 +158,34 @@ Mixed assembly interleaves solo cuts (single-character moments) with multi-perso
 
 ## Results
 
+### Case Study: UGC-Style Product Video
+
+End-to-end pipeline producing a user-generated content (UGC) style product demonstration. A real product photo and lifestyle reference were fed into the pipeline. The AI character (YUMI) was composited into a car selfie scene holding the product, with audio-driven lip sync and natural gestures.
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="assets/suave-product-reference.jpg" width="250" alt="Product reference input"><br>
+      <sub><b>1. Product Reference</b></sub><br>
+      <sub>Source product photo (white background)</sub>
+    </td>
+    <td align="center">
+      <img src="assets/suave-lifestyle-input.jpg" width="250" alt="Lifestyle pose reference"><br>
+      <sub><b>2. Lifestyle Reference</b></sub><br>
+      <sub>Pose and scene composition target</sub>
+    </td>
+    <td align="center">
+      <img src="assets/yumi-suave-ugc.png" width="250" alt="AI character UGC output"><br>
+      <sub><b>3. AI Character Output</b></sub><br>
+      <sub>YUMI holding product, car selfie style</sub>
+    </td>
+  </tr>
+</table>
+
+The final video features the character speaking to camera with the product, generating a natural UGC-style product endorsement. The entire sequence — image generation, TTS voice, avatar animation, SFX mixing — runs on custom cloud GPU infrastructure (Modal A100-80GB) at approximately $0.02 per scene.
+
+### Production Metrics
+
 - **Production-deployed** - not a demo, produces content daily
 - **Character consistency** across multi-scene videos (solved via lock protocol)
 - **Multi-character dialogue** with independent lip-sync per character
