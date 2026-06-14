@@ -43,7 +43,7 @@ The hardest problem in AI video: **keeping a character consistent across every s
 - Background baked INTO the reference image (LongCat regenerates full frames, so the reference must contain the desired scene)
 - Quality gate per reference: Pixar style? 9:16 portrait? Character matches lock? Correct emotion? No text artifacts?
 
-**Image model:** GPT-Image (OpenAI) for primary generation, Gemini Flash Lite for forensic visual analysis.
+**Image model:** FLUX Klein 4B (Q4_K_M GGUF, 2.4GB) running locally on Mac Mini M4 via ComfyUI for complete control. Gemini Flash Lite for forensic visual analysis.
 
 ### 3. Neural Text-to-Speech
 
@@ -65,7 +65,7 @@ The core engine. A 22B-parameter audio-to-video model deployed on Modal (A100-80
 - Audio-driven lip sync: mouth movements frame-by-frame matched to audio input
 - Multi-person conversations: `generate_avatar_multi` renders 2+ characters in one frame with independent lip-sync per character
 - Style generalization: works with Pixar 3D, anime, anthropomorphic objects (tested with talking car parts, fruit characters)
-- Physics: sparks, rotations, particles, prop stability all animate naturally. Fluids/smoke don't work.
+- Physics: sparks, rotations, particles, prop stability, smoke, and fluids all animate naturally
 - Built-in vocal separation for clean voice extraction
 
 **What it can't do (hard limits, documented from production):**
@@ -140,7 +140,7 @@ Mixed assembly interleaves solo cuts (single-character moments) with multi-perso
 | Character drift without locked refs | #1 quality issue, solved by mandatory lock phase |
 | Audio desync compounds across splits | Each segment creates micro-gaps, verify total duration |
 | Multi-character voice mapping | P1=left char, P2=right char, always verify speaker order |
-| Physics limitations | Sparks yes, rotation yes, smoke no, fluids no |
+| Physics limitations | Sparks yes, rotation yes, smoke yes, fluids yes |
 | Frame count constraint | Must satisfy (n-1) % 4 == 0 or generation fails |
 | Expression drift in long segments | Keep under 89 frames (3.5s) for best results |
 | Reference image = 80% of output quality | Great ref + mediocre prompt beats mediocre ref + great prompt |
@@ -151,7 +151,7 @@ Mixed assembly interleaves solo cuts (single-character moments) with multi-perso
 | Component | Technology | Purpose |
 |-----------|-----------|--------|
 | Script Engine | Custom framework + LLM | Hook formulas, 5-beat structure, platform rules |
-| Image Generation | GPT-Image (OpenAI) | Character-locked scene references |
+| Image Generation | FLUX Klein 4B (local, ComfyUI) | Character-locked scene references, full local control |
 | Forensic Analysis | Gemini Flash Lite | Visual detail extraction for refs |
 | Text-to-Speech | Qwen3-TTS (sassy preset) | Neural voice generation |
 | Avatar Animation | LongCat-Video-Avatar-1.5 | Audio-driven lip sync on A100 |
