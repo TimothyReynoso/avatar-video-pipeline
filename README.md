@@ -199,6 +199,20 @@ https://github.com/user-attachments/assets/cc890559-be36-456a-8985-57597bb2d7c6
 - **34,000-word content bible** backing every creative decision
 - **Platform-optimized** output for TikTok, Instagram Reels, YouTube Shorts
 
+## Cost Comparison: Infrastructure Options
+
+The pipeline runs on multiple infrastructure tiers. Here's the real cost per generated video:
+
+![Cost Comparison: AI Video Generation](assets/cost-comparison.png)
+
+| Infrastructure | Cost per Video | Notes |
+|----------------|---------------|-------|
+| **DGX Spark (local)** | **$0.00** | Owned hardware, unlimited generations |
+| **Modal A100 (cloud)** | **$0.15** | Pay-per-use GPU, ~$0.02/scene |
+| **Third-party API** | **$1.41** | Replicate/Kling — pay-per-generation |
+
+> **9× cost reduction** by moving from third-party APIs to our own GPU infrastructure. The DGX Spark (128GB RAM, NVIDIA GPU) runs the same models at zero marginal cost for unlimited internal generation.
+
 ## License
 
 MIT
